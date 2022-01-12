@@ -1,0 +1,56 @@
+.justify {
+  text-align: justify;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: red;
+  background-color: black;
+  color: white;
+  padding-top: 0.2em;
+  padding-bottom: 0.5em;
+}
+
+a {
+  font-weight: bold;
+  text-decoration-style: wavy;
+}
+a:visited {
+  color: mediumblue;
+}
+
+h2 {
+  text-align: center;
+  background-color: darksalmon;
+}
+
+h4 {
+  text-align: end;
+}
+
+section {
+  margin-top: 3em;
+  border-style: solid;
+  border-color: blue;
+  border-width: 2px;
+  background-color: azure;
+  padding: 0 1em;
+}
+
+body {
+  background-color: beige;
+}
+
+hr {
+  height: 4px;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 100%;
+  margin: 0px 10em;
+}
