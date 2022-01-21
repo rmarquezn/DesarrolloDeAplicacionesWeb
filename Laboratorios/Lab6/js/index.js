@@ -15,6 +15,7 @@ $(".agregar").on("click", function (e) {
 
 $(".checar").on("click", function (e) {
   e.preventDefault();
+  console.log("hola");
   $(this).parent().toggleClass("chec");
 });
 
