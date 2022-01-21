@@ -31,29 +31,32 @@ function TodoPost(e) {
   div.append(label);
 
   list.append(div);
-  input.val(" ");
+  $("#todoText").val("");
 }
 
 function TodoClear() {
-  let todos = $('td[name="todo"]');
+  let todos = $("#todoList").children();
   for (let i = 0; i < todos.length; i++) {
-    todos[i].prop("checked", false);
+    let todo = $(todos[i]);
+    todo.children("input").prop("checked", false);
   }
 }
 
 function TodoMark() {
-  let todos = $('td[name="todo"]');
+  let todos = $("#todoList").children();
   for (let i = 0; i < todos.length; i++) {
-    todos[i].prop("checked", true);
+    let todo = $(todos[i]);
+    todo.children("input").prop("checked", true);
   }
 }
 
 function TodoDel() {
-  let todos = $('td[name="todo"]');
+  let todos = $("#todoList").children();
 
   for (let i = 0; i < todos.length; i++) {
-    if (todos[i].checked) {
-      todos[i].parentElement.remove();
+    let todo = $(todos[i]);
+    if (todo.children("input").prop("checked")) {
+      todo.remove();
     }
   }
 }
