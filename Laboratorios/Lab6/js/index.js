@@ -1,6 +1,7 @@
 let lista = $(".Lista");
 
-$(".agregar").on("click", function () {
+$(".agregar").on("click", function (e) {
+  e.preventDefault();
   let caja = $('<li class="lis">');
   let item = $("<p>");
   let text = $("#newText").val();
