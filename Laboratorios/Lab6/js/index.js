@@ -13,13 +13,13 @@ $(".agregar").on("click", function (e) {
   $("#newText").val("");
 });
 
-$(".checar").on("click", function (e) {
+$(document).on("click", ".checar", function (e) {
   e.preventDefault();
   console.log("hola");
   $(this).parent().toggleClass("chec");
 });
 
-$(".del").on("click", function (e) {
+$(document).on("click", ".del", function (e) {
   e.preventDefault();
   $(this).parent().remove();
 });
