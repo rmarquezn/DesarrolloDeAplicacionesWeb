@@ -85,8 +85,8 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
-  $(".submit").on("click", function (event) {
-    event.preventDefault();
+  $(".submit").on("click", function (e) {
+    e.preventDefault();
 
     var newReservation = {
       customerName: $("#reserve-name").val().trim(),
@@ -102,25 +102,8 @@
     // depending on if a tables is available or not.
 
     $.post("/api/tables", newReservation, function (data) {
-      // If a table is available... tell user they are booked.
-      if (data) {
-        $("#success-alert")
-          .fadeTo(3000, 500)
-          .slideUp(500, function () {
-            $("#success-alert").slideUp(500);
-          });
-      }
+      alert("Reservación Registrada");
 
-      // If a table is available... tell user they on the waiting list.
-      else {
-        $("#lleno-alert")
-          .fadeTo(3000, 500)
-          .slideUp(500, function () {
-            $("#lleno-alert").slideUp(500);
-          });
-      }
-
-      // Clear the form when submitting
       $("#reserve-name").val("");
       $("#reserve-phone").val("");
       $("#reserve-email").val("");

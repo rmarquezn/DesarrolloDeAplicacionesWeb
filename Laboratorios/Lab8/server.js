@@ -34,13 +34,7 @@ var tables = [
   },
 ];
 
-var waitlist = [
-  {
-    customerName: "Shrek",
-    phoneNumber: "5567184821",
-    customerEmail: "shrek@mail.com",
-  },
-];
+var waitlist = [];
 
 // Rutas principales
 app.get("/", function (req, res) {
@@ -65,10 +59,27 @@ app.get("/api/waitlist", function (req, res) {
 
 // Post Mesas
 app.post("/api/tables", function (req, res) {
-  console.log("post tables");
+  var newTable = req.body;
+  console.log(tables.length);
+  if (tables.length < 5) {
+    tables.push(newTable);
+  } else {
+    waitlist.push(newTable);
+  }
+  res.json(newTable);
 });
 
 // Post Waitlist
+app.post("/api/waitlist", function (req, res) {
+  console.log("post waitlist");
+});
+
+// Clear Mesas
+app.post("/api/clear", function (req, res) {
+  tables = [];
+  waitlist = [];
+  return res.json(tables);
+});
 
 // Listen
 app.listen(PORT, function () {
